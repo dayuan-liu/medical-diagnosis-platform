@@ -3,9 +3,9 @@ server:
 
 spring:
   datasource:
-    username:b3257a2f8e8927
-    password:f1b576ca
-    url: jdbc:mysql://us-cdbr-iron-east-05.cleardb.net/heroku_bb898274b5651e9?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: b3257a2f8e8927
+    password: f1b576ca
+    url: jdbc:mysql://us-cdbr-iron-east-05.cleardb.net:3306/heroku_bb898274b5651e9?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.jdbc.Driver
 
 
