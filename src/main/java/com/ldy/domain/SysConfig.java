@@ -32,7 +32,7 @@ public class SysConfig {
     @Override
     public String toString() {
         return "SysConfig{" +
-                "variable='" + variable + '\'' +
+                "variable='" + variable + '\'' 
                 ", value='" + value + '\'' +
                 ", set_by='" + set_by + '\'' + "12"+
                 '}';
