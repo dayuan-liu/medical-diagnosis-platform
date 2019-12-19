@@ -1,8 +1,9 @@
 version: 2
-  jobs:
-    build:
-      docker:
-          - image: circleci/ruby:2.4.1
-      steps:
-        - checkout
-        - run: echo "steps is run"
+
+jobs:
+build:
+  docker:
+    - image: circleci/openjdk:13.0-jdk-buster-node-browsers
+  steps:
+    - checkout
+    - run: echo "steps is run"
