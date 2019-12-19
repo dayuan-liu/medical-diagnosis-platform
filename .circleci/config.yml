@@ -1,8 +1,19 @@
 version: 2
-  jobs:
-    build:
-      docker:
-          - image: circleci/ruby:2.4.1
-      steps:
-        - checkout
-        - run: echo "steps is run"
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:13.0-jdk-buster-node-browsers
+    steps:
+      - checkout
+      - restore_cache:
+          key: medical-diagnosis-platform-{{ checksum "pom.xml" }}
+      - run: mvn dependency:go-offline
+      - save_cache:
+          paths:
+            - ~/.m2
+          key: medical-diagnosis-platform-{{ checksum "pom.xml" }}
+      - run: mvn package
+      - store_test_results:
+          path: target/surefire-reports
+      - store_artifacts:
+          path: target/medical-diagnosis-platform-0.0.1-SNAPSHOT.jar
