@@ -1,8 +1,9 @@
 version: 2
 jobs:
-build:
-  docker:
-    - image: circleci/openjdk:13.0-jdk-buster-node-browsers
-  steps:
-    - checkout
-    - run: echo "steps is run"
+  build:
+    docker:
+      - image: circleci/openjdk:13.0-jdk-buster-node-browsers
+    steps:
+      - checkout
+
+      - run: echo "steps is run"
